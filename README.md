@@ -13,7 +13,7 @@ You need visual studio 2017 with core 2.1 installed to build program
   git clone
 2. Open project in visual studio
 3. In folder "...\rabbitStairs\bin\Debug\netcoreapp2.1" create file "input.txt" and enter input informaion in format
-	k, n
+	"k, n". Remember that 1 ≤ k ≤ n ≤ 300
 4. Build project 
 
 Usage
