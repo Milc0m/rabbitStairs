@@ -1,6 +1,7 @@
 cubeParameters
 =====================
 
+
 A simple program which was created to solve this task:
 
 A rabbit appeared in our zoo. He was placed in a cage, and so that he was not bored, the director of the zoo ordered to put a ladder in his cage. 
@@ -8,6 +9,7 @@ Now our bunny can jump up the ladder, jumping over the steps. A ladder has a cer
 A rabbit can overcome in no more than K steps in one leap. The bunny tries every time to find a new path to the top of the stairs.
 The director is curious how much different ways the rabbit has to get to the top of the stairs for given values ​​of K and N.
 Help the director to write a program that will help him calculate this number.
+
 
 Installation
 ----------------------------------- 
@@ -20,6 +22,7 @@ You need visual studio 2017 with core 2.1 installed to build program
 3. Copy file "input.txt" to folder "...\rabbitStairs\bin\Debug\netcoreapp2.1"
 4. Replace the number in file with your input information in format	"K, N". Remember that 1 ≤ K ≤ N ≤ 300
 5. Build project 
+
 
 Usage
 ----------------------------------- 
