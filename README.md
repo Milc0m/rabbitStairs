@@ -6,7 +6,6 @@ A simple program which was created to solve [this task](http://acmp.ru/index.asp
 Installation
 ----------------------------------- 
 
-Installation should be step-by-step:
 You need visual studio 2017 with core 2.1 installed to build program
 
 1. Clone repo:
