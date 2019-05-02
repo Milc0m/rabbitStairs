@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Numerics;
 using System.Text;
 
 namespace rabbitStairs
@@ -73,21 +74,26 @@ namespace rabbitStairs
         public int Steps { get; set; }
         public int QtyStairs { get; set; }
 
-        public int RabbitVariantCalculaiton(int k, int n)
+        public BigInteger RabbitVariantCalculaiton(int k, int n)
         {
-            // We get negative number, this means that our stairs is less than jump length. This method doesn't work
-            if (n < 0) return 0;
-            // We are at the top of the stairs, previous jump guide us to the target
-            if (n == 0) return 1;
-            // Calculating the quantity of possibilities for current stairs
-            int s = 0;
-            // Trying all possibilities of jumping
-            for (var i = 1; i <= k; i++) 
+            // Creating array for all possible variants  
+            BigInteger[] variants = new BigInteger[n + 1];
+            // First level have only 1 variant 
+            variants[0] = 1;
+            variants[1] = 1;
+            // Calculating in 10^9 system for improving speed of calculating(max 450000 operations for case k=300, n=300)
+            // Calculating variants where rabbit can jump from begin of the stairs  
+            for (var i = 2; i <= k; i++)
             {
-                // Making the jump for i step will guide us to the same task with a stair that have (n - i) steps
-                s += RabbitVariantCalculaiton(k, n - i);
+                variants[i] = variants[i - 1] << 1;
             }
-            return s;
+            // Continue calculating for cases where rabbit jump from other levels   
+            for (var i = k + 1; i <= n; i++)
+            {
+                variants[i] = (variants[i - 1] << 1) - (variants[i - k - 1]);
+            }
+
+            return variants[n];
         }
 
         public void CheckInput(int k, int n)
