@@ -1,4 +1,4 @@
-cubeParameters
+rabbitVariants
 =====================
 
 A simple program which was created to solve this task:
@@ -18,7 +18,7 @@ You need visual studio 2017 with core 2.1 installed to build program
   git clone
 2. Open project in visual studio
 3. Copy file "input.txt" to folder "...\rabbitStairs\bin\Debug\netcoreapp2.1"
-4. Replace the number in file with your input information in format	"K, N". Remember that 1 ≤ K ≤ N ≤ 300
+4. Replace the number in file with your input information in format	"K, N". Remember that 1 ≤ K ≤ N. Program tested up to 3000, use higher values at your own risk.
 5. Build project 
 
 
