@@ -12,8 +12,8 @@ namespace rabbitStairs
             int result;
 
             InputLine lineObj = new InputLine();
-
- 
+            
+            // Open input file
             using (FileStream fstream = new FileStream("input.txt", FileMode.OpenOrCreate))
             {
                 byte[] output = new byte[10];
@@ -54,16 +54,10 @@ namespace rabbitStairs
                 Environment.Exit(-1);
             }
 
-            if (lineObj.n > 300)
-            {
-                Console.WriteLine("The stair is too high for rabbit. It can't be grater than 300 steps. Program will be close.");
-                // Delay
-                Console.ReadLine();
-                Environment.Exit(-1);
-            }
+            
 
 
-            result = lineObj.Rabbit(lineObj.k, lineObj.n);
+            result = lineObj.Krolik(lineObj.k, lineObj.n);
 
             using (FileStream outFstream = new FileStream("output.txt", FileMode.Create))
             {
@@ -85,7 +79,7 @@ namespace rabbitStairs
         public int k { get; set; }
         public int n { get; set; }
 
-        public int Rabbit(int k, int n)
+        public int Krolik(int k, int n)
         {
             // We get negative number, this means that our stairs is less than jump length. This method doesn't work
             if (n < 0) return 0;
@@ -97,7 +91,7 @@ namespace rabbitStairs
             for (int i = 1; i <= k; i++) 
             {
                 // Making the jump for i step will guide us to the same task with a stair that have (n - i) steps
-                s += Rabbit(k, n - i);
+                s += Krolik(k, n - i);
             }
             return s;
         }
